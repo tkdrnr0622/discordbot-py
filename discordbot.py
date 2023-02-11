@@ -88,6 +88,6 @@ async def on_member_remove(member):
 
 
 try:
-    client.run(TOKEN)
+    client.run('MTAwODkyOTExMjU0MDMxOTgzNQ.GdrFxg.XZlXjPvoGQsvA-hhVQyAsYdhyD4UwbK1c2NAIw')
 except discord.errors.LoginFailure as e:
     print("Improper token has been passed.")
