@@ -3,10 +3,11 @@ from distutils.sysconfig import PREFIX
 import discord
 from dotenv import load_dotenv
 import os
-load_dotenv()
 import asyncio
 import youtube_dl
 import random
+load_dotenv()
+
 
 PREFIX = os.environ['PREFIX']
 TOKEN = os.environ['TOKEN']
