@@ -89,6 +89,6 @@ async def on_message(message):
 
 
 try:
-    client.run('MTAwODkyOTExMjU0MDMxOTgzNQ.GdrFxg.XZlXjPvoGQsvA-hhVQyAsYdhyD4UwbK1c2NAIw')
+    client.run(TOKEN)
 except discord.errors.LoginFailure as e:
     print("Improper token has been passed.")
