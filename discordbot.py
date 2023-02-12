@@ -16,28 +16,6 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    print(f'Logged in as {client.user}.')
-    
-@client.event
-async def on_ready():
-    print(f'{client.user} has connected to Discord!')
-
-@client.event
-async def on_member_join(member):
-    await member.create_dm()
-    await member.dm_channel.send(
-        f'Hi {member.name}, welcome to the server!'
-    )
-
-@client.event
-async def on_member_remove(member):
-    print(f'{member} has left the server.')
-    channel = discord.utils.get(member.guild.channels, name='general')
-    await channel.send(
-        f'Goodbye {member.mention}. We will miss you!'
-    )
-@client.event
-async def on_ready():
     print(f'{client.user} has connected to Discord!')
 
 @client.event
@@ -88,11 +66,25 @@ async def on_message(message):
         user = message.mentions[0]
         await user.send('Private Message')
         
+@client.event
+async def on_ready():
+    print(f'{client.user} has connected to Discord!')
+
+@client.event
+async def on_member_join(member):
+    await member.create_dm()
+    await member.dm_channel.send(
+        f'Hi {member.name}, welcome to the server!'
+    )
+
+@client.event
+async def on_member_remove(member):
+    print(f'{member} has left the server.')
+    channel = discord.utils.get(member.guild.channels, name='general')
+    await channel.send(
+        f'Goodbye {member.mention}. We will miss you!'
+    )
 
 
 
-
-try:
-    client.run(TOKEN)
-except discord.errors.LoginFailure as e:
-    print("Improper token has been passed.")
+client.run('MTAwODkyOTExMjU0MDMxOTgzNQ.GdrFxg.XZlXjPvoGQsvA-hhVQyAsYdhyD4UwbK1c2NAIw')
